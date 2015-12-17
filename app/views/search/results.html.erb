@@ -1,1 +1,24 @@
-<table> <% tweets.first %> </table>
+<h1> Results </h1>
+
+<div>
+	<table>
+	  <thead>
+	    <tr>
+	      <th> Count </th>
+	      <th> Re-tweet? </th>
+	      <th> User </th>
+	      <th> Tweet </th>
+	    </tr>
+	  </thead>
+
+	  <% @tweets.each_with_index {|data, index| %>  
+		<tr>
+			<td> <%= index+1 %>. </td>
+			<td> <%= data[:retweet] %> </td>
+			<td> <%= data[:user] %> </td>
+			<td> <%= data[:tweet] %> </td>
+
+		</tr>
+	  <% } %>
+	</table>
+</div>
