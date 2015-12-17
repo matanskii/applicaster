@@ -1,0 +1,17 @@
+<h1> Mike </h1>
+
+<%= form_for :search do |f| %>
+  <p>
+    <%= f.label :username %><br>
+    <%= f.text_field :username %>
+  </p>
+ 
+  <p>
+    <%= f.label :search_keyword %><br>
+    <%= f.text_area :text %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
