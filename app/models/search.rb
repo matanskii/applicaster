@@ -1,10 +1,10 @@
 class Search < ActiveRecord::Base
-
-	field :query
-	field :results, type: Array, defualt: Array.new
+	
+	# Table fields:
+	# query (string)
+	# results (string?)
 
 	belongs_to :user
-
-	
+	serialize :results, Array
 
 end

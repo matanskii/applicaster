@@ -1,17 +1,24 @@
-<h1> Mike </h1>
+<h1> Welcome to Matan's Tweetomator! </h1>
 
-<%= form_for :search do |f| %>
-  <p>
-    <%= f.label :username %><br>
-    <%= f.text_field :username %>
-  </p>
- 
-  <p>
-    <%= f.label :search_keyword %><br>
-    <%= f.text_area :text %>
-  </p>
- 
-  <p>
-    <%= f.submit %>
-  </p>
+<!-- TODO change route to users/:username/history -->
+ <%= form_tag("users/history", :method => "get", class: "navbar-form", id: "history-form") do %>
+  <div class="input-append">
+    <%= label_tag :username %>
+    <br>
+    <%= text_field_tag :username, "", class: "span2", placeholder: "Enter Name" %>
+    <br>
+    <input type="submit" value="View User's Search History" name="commit" id="submit" />
+  </div>
+<% end %>
+<br>
+<%= form_tag("search", :method => "post", class: "navbar-form", id: "history-form") do %>
+  <div class="input-append">
+    <%= label_tag :search_keyword %>
+    <%= label_tag :username %>
+    <br>
+    <%= text_field_tag :query, "", class: "span2", placeholder: "Enter Query Text" %>
+    <%= text_field_tag :username, "", class: "span2", placeholder: "Your Username" %>
+    
+    <input type="submit" value="Search" name="commit" id="submit" />
+  </div>
 <% end %>
